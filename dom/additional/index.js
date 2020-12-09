@@ -13,6 +13,8 @@ inputNumber.addEventListener("change", function (event) {
     value = 0;
   }
 
+  const childNodes = blocks.childNodes;
+
   if (blocksCount < value) {
     for (let i = blocksCount + 1; i <= value; i++) {
       const item = document.createElement("li");
@@ -22,8 +24,12 @@ inputNumber.addEventListener("change", function (event) {
     }
   } else if (blocksCount > value) {
     for (let i = blocksCount - 1; i >= value; i--) {
-      blocks.removeChild(blocks.childNodes[i]);
+      blocks.removeChild(childNodes[i]);
     }
+  }
+
+  for (let i = 0; i < blocks.childElementCount; i++) {
+    childNodes[i].style.backgroundColor = "#fff";
   }
 
   blocksCount = value;
