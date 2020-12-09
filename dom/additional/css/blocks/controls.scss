@@ -1,0 +1,10 @@
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__number {
+    margin-right: 10px;
+  }
+}
