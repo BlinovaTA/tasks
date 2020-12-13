@@ -1,11 +1,12 @@
-function filterArray(mixedArray, isEven) {
+const filterArray = (mixedArray, isEven) => {
   let filteredArray = [];
-
-  for (let i = 0; i < mixedArray.length; i++) {
-    if (isEven(mixedArray[i])) {
-      filteredArray.push(mixedArray[i]);
+  
+  mixedArray.forEach(item => {
+    if (isEven(item)) {
+      filteredArray.push(item);
     }
-  }
+  });
+
 
   return filteredArray;
 }

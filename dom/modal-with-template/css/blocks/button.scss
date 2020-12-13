@@ -1,0 +1,13 @@
+.open-button {
+  background: #a492e6;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 18px;
+  border: none;
+  margin: 16px;
+
+  &:hover {
+    cursor: pointer;
+    opacity: .8;
+  }
+}

@@ -8,7 +8,7 @@ const blocks = document.querySelector(".blocks");
 const isEven = num => num % 2 === 0;
 
 inputNumber.addEventListener("change", function (event) {
-  let value = event.target.valueAsNumber;
+  let value = event.target.value;
   if (isNaN(value)) {
     value = 0;
   }
@@ -32,27 +32,22 @@ inputNumber.addEventListener("change", function (event) {
     childNodes[i].style.backgroundColor = "#fff";
   }
 
-  blocksCount = value;
+  blocksCount = parseInt(value);
 });
 
 inputColor.addEventListener("change", function (event) {
   const color = event.target.value;
   const childNodes = blocks.childNodes;
+  let colorToApply = "";
 
   for (let i = 0; i < blocks.childElementCount; i++) {
     if (colorEven) {
-      if (isEven(i)) {
-        childNodes[i].style.backgroundColor = "#fff";
-      } else {
-        childNodes[i].style.backgroundColor = color;
-      }
+      colorToApply = isEven(i) ? "#fff" : color;
     } else {
-      if (isEven(i)) {
-        childNodes[i].style.backgroundColor = color;
-      } else {
-        childNodes[i].style.backgroundColor = "#fff";
-      }
+      colorToApply = isEven(i) ? color : "#fff";      
     }
+
+    childNodes[i].style.backgroundColor = colorToApply;
   }
 
   colorEven = !colorEven;

@@ -1,10 +1,6 @@
-function isHtml(path) {
-  let tail = path.substr(-5, 5);
-  if (tail.localeCompare(".html") === 0) {
-    return true;
-  } else {
-    return false;
-  }  
+const isHtml = path => {
+  const tail = path.slice(-5);
+  return tail === ".html";
 }
 
 const path = "/users/download/index.html";

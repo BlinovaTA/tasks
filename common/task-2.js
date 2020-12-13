@@ -1,11 +1,11 @@
-function getWorthyWorkers(workers) {
+const getWorthyWorkers = workers => {
   let namesArray = [];
 
-  for (let i = 0; i < workers.length; i++) {
-    if (workers[i].salary > 1000) {
-      namesArray.push(workers[i].name);
+  workers.forEach(currentWorkers => {
+    if (currentWorkers.salary > 1000) {
+      namesArray.push(currentWorkers.name);
     }
-  }
+  });
 
   return namesArray;
 }
